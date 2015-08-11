@@ -1,0 +1,8 @@
+views:
+  - build_pipeline:
+      filter-executors: false
+      filter-queue: false
+      folder: true
+      first-job: testjob
+      name: testbuild 
+      build-view-title: "Test Build Pipeline"

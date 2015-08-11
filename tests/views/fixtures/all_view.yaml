@@ -1,0 +1,4 @@
+views:
+  - all:
+      filter-executors: false
+      filter-queue: false
