@@ -1,6 +1,6 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
-
+from setuptools.command.test import test as TestCommand
 
 try:
     from setuptools import setup
@@ -22,9 +22,31 @@ test_requirements = [
     # TODO: put package test requirements here
 ]
 
+
+class Tox(TestCommand):
+    user_options = [('tox-args=', 'a', "Arguments to pass to tox")]
+
+    def initialize_options(self):
+        TestCommand.initialize_options(self)
+        self.tox_args = None
+
+    def finalize_options(self):
+        TestCommand.finalize_options(self)
+        self.test_args = []
+        self.test_suite = True
+
+    def run_tests(self):
+        #import here, cause outside the eggs aren't loaded
+        import tox
+        import shlex
+        args = self.tox_args
+        if args:
+            args = shlex.split(self.tox_args)
+        tox.cmdline(args=args)
+
 setup(
     name='jenkins-job-builder-addons',
-    version='0.1.0',
+    version='1.0.0',
     description="A suite of jenkins job builder addons",
     long_description=readme + '\n\n' + history,
     author="Mike Buzzetti",
@@ -49,7 +71,8 @@ setup(
         'Programming Language :: Python :: 3.4',
     ],
     test_suite='tests',
-    tests_require=test_requirements,
+    tests_require=['tox'] + test_requirements,
+    cmdclass={'test': Tox},
     entry_points={
         'jenkins_jobs.projects': [
             'folder=jenkins_jobs_addons.folders:Folder',

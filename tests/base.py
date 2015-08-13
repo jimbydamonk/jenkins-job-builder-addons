@@ -43,6 +43,7 @@ from jenkins_jobs.modules import (project_flow,
                                   project_matrix,
                                   project_maven,
                                   project_multijob)
+from jenkins_jobs_addons import folders
 
 
 def get_scenarios(fixtures_path, in_ext='yaml', out_ext='xml',
@@ -130,8 +131,11 @@ class BaseTestCase(object):
 
         expected_xml = self._read_utf8_content()
         yaml_content = self._read_yaml_content(self.in_filename)
+        if isinstance(yaml_content, list):
+            yaml_content = yaml_content[0]
         project = None
         if ('project-type' in yaml_content):
+            yaml_content['project-type']
             if (yaml_content['project-type'] == "maven"):
                 project = project_maven.Maven(None)
             elif (yaml_content['project-type'] == "matrix"):
@@ -140,12 +144,14 @@ class BaseTestCase(object):
                 project = project_flow.Flow(None)
             elif (yaml_content['project-type'] == "multijob"):
                 project = project_multijob.MultiJob(None)
+            elif (yaml_content['project-type'] == "folder"):
+                project = folders.Folder(None)
 
         if project:
             xml_project = project.root_xml(yaml_content)
         else:
             xml_project = XML.Element('project')
-
+        print yaml_content
         plugins_info = None
         if self.plugins_info_filename is not None:
             plugins_info = self._read_yaml_content(self.plugins_info_filename)
@@ -174,6 +180,7 @@ class BaseTestCase(object):
 
 
 class SingleJobTestCase(BaseTestCase):
+
     def test_yaml_snippet(self):
         expected_xml = self._read_utf8_content()
 

@@ -1,0 +1,5 @@
+name: folder_test
+project-type: folder
+primary-view: "Test Primary View"
+health-metrics:
+  - worst-child-health-metric
