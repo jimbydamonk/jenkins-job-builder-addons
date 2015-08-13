@@ -6,3 +6,13 @@ views:
       first-job: testjob
       name: testbuild 
       build-view-title: "Test Build Pipeline"
+      display-number-of-builds: 10
+      console-output-link-style: "Light Box"
+      csss-url: ""
+      trigger-only-latest-job: false
+      always-allow-manual-trigger: false
+      show-pipeline-parameters: false
+      show-pipeline-parameters-in-header: false
+      start-with-parameters: false
+      refresh-frequency: 3
+      show-pipeline-definition-in-headers: false

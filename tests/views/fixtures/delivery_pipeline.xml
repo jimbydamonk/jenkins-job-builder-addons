@@ -27,6 +27,8 @@
       <showDescription>false</showDescription>
       <showPromotions>false</showPromotions>
       <regexpFirstJobs/>
+      <fullScreenCss/>
+      <embeddedCss/>
     </se.diabol.jenkins.pipeline.DeliveryPipelineView>
   </views>
 </project>

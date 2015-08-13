@@ -8,3 +8,16 @@ views:
           first-job: testjob
       name: testbuild 
       build-view-title: "Test Build Pipeline"
+      number-of-pipelines: 3
+      show-aggregated-pipeline: false
+      number-of-columns: 1
+      sorting: none
+      show-avatars: false
+      update-interval: 1
+      show-changes: false
+      allow-manual-triggers: false
+      show-total-buildtime: false
+      allow-rebuild: false
+      allow-pipeline-start: false
+      show-description: false
+      show-promotions: false
