@@ -29,7 +29,7 @@ Install
 1. Get python-jenkins  
   * git clone git://git.openstack.org/stackforge/python-jenkins
   * cd python-jenkins   
-  * git fetch https://review.openstack.org/stackforge/python-jenkins refs/changes/85/180185/19 && git checkout 
+  * git fetch https://review.openstack.org/stackforge/python-jenkins refs/changes/85/180185/19 && git checkout FETCH_HEAD
   * python setup.py install
 2. Get jenkins-job-builder 
   * git clone git://git.openstack.org/openstack-infra/jenkins-job-builder

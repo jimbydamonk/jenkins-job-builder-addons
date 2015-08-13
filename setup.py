@@ -46,7 +46,7 @@ class Tox(TestCommand):
 
 setup(
     name='jenkins-job-builder-addons',
-    version='1.0.0',
+    version='1.0.1',
     description="A suite of jenkins job builder addons",
     long_description=readme + '\n\n' + history,
     author="Mike Buzzetti",
@@ -61,7 +61,7 @@ setup(
     classifiers=[
         'Development Status :: 2 - Pre-Alpha',
         'Intended Audience :: Developers',
-        'License :: OSI Approved :: Apache License',
+        'License :: OSI Approved :: Apache Software License',
         'Natural Language :: English',
         "Programming Language :: Python :: 2",
         'Programming Language :: Python :: 2.6',
