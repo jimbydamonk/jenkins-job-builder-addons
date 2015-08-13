@@ -7,7 +7,7 @@ jenkins-job-builder-addons
         :alt: Travis CI
 
 .. image:: https://img.shields.io/pypi/v/jenkins-job-builder-addons.svg
-        :target: https://pypi.python.org/pypi/jenkins-job-builder-
+        :target: https://pypi.python.org/pypi/jenkins-job-builder-addons
         :alt: Latest version
 
 
