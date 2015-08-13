@@ -4,14 +4,15 @@ env:
 - TOXENV=py26
 - TOXENV=py27
 install:
-- pip install -U tox twine wheel 
+- pip install -U tox twine wheel
 script:
 - tox
 deploy:
   provider: pypi
   user: jimbydamonk
   password:
-    secure: p+uJWuElicLZ48oELA3Zd0uNTi4ImXSA1+kTeg0DOCKequUDC7sL9eUZ2CZQStvY2PDKTGWzg97NBy4n4j4CGPGCPkledw1j3tfr9OnxVnzfuryQXm3bn10Ics0aZo27MgGM6iEQIWmRJX8azkqAsHimJ1rxcywL/R5SGsnRQaLYhcn7B95dEX1qK6ZvnWj/tU2UdibxbX6J1xkBBZ8B9krCLShDxl2hZbx9NfPDwNDFqtDk1AtRU/HAoWpnCbV7Sa7IEB9j3euAEJFntvefhHpfHwYGAkE4P7LrQqGmkRG8i3uc1Ia9wUGM67kZU4yAMBSSbRj23Jflf7ckA/+h1niLc6KEs/jUDRaPa64Kkc1irugEANm5A298Ibzz6CG78Tp1iqNoOrcfROr7n7E5NLUlWl6tSdYcs7Jm4aVCBrF6jDDz5CFbSYTCjvt/mv37yAnalbxdHPTv+Q1Pqwor1j5Ivgk+a3yU7GiHxNQhPcuIq0h+dDkT2zWD89HNQZgwyq/qw+HKh0AaGjI5SFuebX75+ehRrymtF8xCw62IDWXtMV/nXeOBuccVuu6pHJjzdsWL59pUHMlV1whftszVICd7+R/0jxiMok7KSwg8LLdKy/mh5MdcypVM2IRqwb78GHctcJqrI8+uDsfB1bOzoVBQKsusXmgtvUjPFkp3tHQ=
+    secure: dg3r6eCYiXOLxIsGFtqV4stvJnqgQ3bt2JDe2NUFamuk6sXVkEznFtd6F3nEJGsw97Dod5aZjLAgZWQXRwQ5Lm3ckwMcIEhYGpeNOgiG5sNtck8etRTKEOnc0w7/6G5LfZfCmRL72NRUikXSBL4YpRROsiLGXu6tQib1zrJq6hqC1OpWvcHlXZ8L5opQkgBJuqwt4MG/2ZX5YbIjsuMJLrk2D5AeyRkHKQxjboAFoTJh7+1PelcDTzbTP07d1lrKmy5uNFHwbt9udkh/JRDg8bfRr/wv13vykhI3aREdlYREj78VaY6uMkYcY11cnvtkp31+AILX4kU8/OXag/45hxzB9IM501zhhZ6CaOeyP1QR+fI2qnSFuAo7ND4OE9VQDApaXBAtD9LobmE9KzfcNz0Xm/gP4wrV7NIsKjVZA+/TbtSutBTowj0UggDDlX13RiUmNiB/SgRx6aLyS58KyGjTbG+opkeUDuS8ig+HVFysEiupLWwjUtS//MxEZWq5wh93xkQsM45Miq8yCTEN/+hq0VrAwkDmgQRdXQqIY8sSIvW28mkzDL+z/8tK+95N8AUa1fdq4pxHL7NvU5BXb62eq3R0rWdff/OEPEwfl4WSrQmMaiS9DoVe5T2sEnMS4Y/sByH1MgcnjmcPhztmj8yvWQ0VWgy82uTR1Bfwf1c=
   on:
     tags: true
     branch: master
+    repo: jimbydamonk/jenkins-job-builder-addons
