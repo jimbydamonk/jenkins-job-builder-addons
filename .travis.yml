@@ -1,10 +1,15 @@
-# Config file for automatic testing at travis-ci.org
-
 language: python
 env:
-    - TOXENV=py26
-    - TOXENV=py27
+- TOXENV=py26
+- TOXENV=py27
 install:
-    - pip install tox
+- pip install tox
 script:
-    - tox
+- tox
+deploy:
+  provider: pypi
+  user: jimbydamonk
+  password:
+    secure: p+uJWuElicLZ48oELA3Zd0uNTi4ImXSA1+kTeg0DOCKequUDC7sL9eUZ2CZQStvY2PDKTGWzg97NBy4n4j4CGPGCPkledw1j3tfr9OnxVnzfuryQXm3bn10Ics0aZo27MgGM6iEQIWmRJX8azkqAsHimJ1rxcywL/R5SGsnRQaLYhcn7B95dEX1qK6ZvnWj/tU2UdibxbX6J1xkBBZ8B9krCLShDxl2hZbx9NfPDwNDFqtDk1AtRU/HAoWpnCbV7Sa7IEB9j3euAEJFntvefhHpfHwYGAkE4P7LrQqGmkRG8i3uc1Ia9wUGM67kZU4yAMBSSbRj23Jflf7ckA/+h1niLc6KEs/jUDRaPa64Kkc1irugEANm5A298Ibzz6CG78Tp1iqNoOrcfROr7n7E5NLUlWl6tSdYcs7Jm4aVCBrF6jDDz5CFbSYTCjvt/mv37yAnalbxdHPTv+Q1Pqwor1j5Ivgk+a3yU7GiHxNQhPcuIq0h+dDkT2zWD89HNQZgwyq/qw+HKh0AaGjI5SFuebX75+ehRrymtF8xCw62IDWXtMV/nXeOBuccVuu6pHJjzdsWL59pUHMlV1whftszVICd7+R/0jxiMok7KSwg8LLdKy/mh5MdcypVM2IRqwb78GHctcJqrI8+uDsfB1bOzoVBQKsusXmgtvUjPFkp3tHQ=
+  on:
+    branch: master
