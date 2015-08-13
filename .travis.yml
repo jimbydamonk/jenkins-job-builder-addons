@@ -1,9 +1,10 @@
 language: python
 env:
+- TOXENV=pep8
 - TOXENV=py26
 - TOXENV=py27
 install:
-- pip install tox
+- pip install -U tox twine wheel 
 script:
 - tox
 deploy:
