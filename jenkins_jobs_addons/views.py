@@ -29,8 +29,8 @@ def all_view(parser, xml_parent, data):
     view = XML.SubElement(xml_parent, 'hudson.model.AllView')
     XML.SubElement(view, 'name').text = 'All'
     in_folder = data.get('folder', False)
+    owner_attrs = dict()
     if in_folder:
-        owner_attrs = dict()
         owner_attrs['class'] = 'com.cloudbees.hudson.plugins.folder.Folder'
         owner_attrs['reference'] = '../../..'
         XML.SubElement(view, 'owner', attrib=owner_attrs)
@@ -127,8 +127,8 @@ def delivery_pipeline_view(parser, xml_parent, data):
 
     view = XML.SubElement(xml_parent, delivery_pipeline)
     in_folder = data.get('folder', False)
+    owner_attrs = dict()
     if in_folder:
-        owner_attrs = dict()
         owner_attrs['class'] = 'com.cloudbees.hudson.plugins.folder.Folder'
         owner_attrs['reference'] = '../../..'
     XML.SubElement(view, 'owner', attrib=owner_attrs)
@@ -285,8 +285,8 @@ def build_pipeline_view(parser, xml_parent, data):
     view = XML.SubElement(xml_parent, build_pipeline)
 
     in_folder = data.get('folder', False)
+    owner_attrs = dict()
     if in_folder:
-        owner_attrs = dict()
         owner_attrs['class'] = 'com.cloudbees.hudson.plugins.folder.Folder'
         owner_attrs['reference'] = '../../..'
         XML.SubElement(view, 'owner', attrib=owner_attrs)
