@@ -78,7 +78,15 @@ setup(
             'all=jenkins_jobs_addons.views:all_view',
             'build_pipeline=jenkins_jobs_addons.views:build_pipeline_view',
             'delivery_pipeline=jenkins_jobs_addons.'
-            'views:delivery_pipeline_view'
+            'views:delivery_pipeline_view',
+            'workflow_pipeline=jenkins_jobs_addons.'
+            'views:workflow_pipeline_view',
+            'nested=jenkins_jobs_addons.'
+            'views:nested_view',
+            'nested_root=jenkins_jobs_addons.'
+            'views:NestedRoot',
+            'sublist=jenkins_jobs_addons.'
+            'views:sublist_view',
         ],
         'jenkins_jobs.modules': [
             'views=jenkins_jobs_addons.views:Views'
