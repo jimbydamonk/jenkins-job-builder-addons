@@ -47,6 +47,8 @@ class Folder(jenkins_jobs.modules.base.Base):
         xml_parent = XML.Element(FOLDER_CLASS)
         XML.SubElement(xml_parent, 'icon', attrib={'class': STOCK_FOLDER_ICON})
 
+        XML.SubElement(xml_parent, 'displayName').text = data.get('display-name', None)
+
         health_metrics = data.get('health-metrics', [])
         metrics = XML.SubElement(xml_parent, 'healthMetrics')
         for health_metric in health_metrics:
